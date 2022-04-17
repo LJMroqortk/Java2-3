@@ -1,18 +1,30 @@
+package test;
 
+import java.util.Stack;
 
 public class LinkedStack<E> implements StackInterface<E> {
 	private Node<E> topNode;
-	private final E ERROR = null;   // 임의의 에러 값
+	private final E ERROR = null;   // �엫�쓽�쓽 �뿉�윭 媛�
 	public LinkedStack() {
 		topNode = null;
 	}
-	
-	// [알고리즘 6-7] 구현: 스택에 원소 x 삽입하기
+	public void copy(LinkedStack a,LinkedStack b) {
+		LinkedList list = new LinkedList<E>();
+		while(a.top() != null) {
+			 list.append(a.pop());
+		}
+		for(int i = 0; i < list.len();i++) {
+			a.push(list.get(i));
+			b.push(list.get(i));
+		}			
+		return;
+	}
+	// [�븣怨좊━利� 6-7] 援ы쁽: �뒪�깮�뿉 �썝�냼 x �궫�엯�븯湲�
 	public void push(E newItem) {
 		topNode = new Node<>(newItem, topNode);
 	}
 	
-	// [알고리즘 6-8] 구현: 스택에서 원소 삭제하기
+	// [�븣怨좊━利� 6-8] 援ы쁽: �뒪�깮�뿉�꽌 �썝�냼 �궘�젣�븯湲�
 	public E pop() {
 		if (isEmpty( )) return ERROR;
 		else {
@@ -22,18 +34,18 @@ public class LinkedStack<E> implements StackInterface<E> {
 		}
 	}
 	
-	// [알고리즘 6-9] 구현: 스택 탑 원소 알려주기
+	// [�븣怨좊━利� 6-9] 援ы쁽: �뒪�깮 �깙 �썝�냼 �븣�젮二쇨린
 	public E top() {
 		if (isEmpty()) return ERROR; 
 		else return topNode.item;
 	}
 	
-	// [알고리즘 6-10] 구현: 스택이 비었는지 확인하기
+	// [�븣怨좊━利� 6-10] 援ы쁽: �뒪�깮�씠 鍮꾩뿀�뒗吏� �솗�씤�븯湲�
 	public boolean isEmpty() {
 		return (topNode == null);
 	}
 	
-	// [알고리즘 6-11] 구현: 스택 비우기
+	// [�븣怨좊━利� 6-11] 援ы쁽: �뒪�깮 鍮꾩슦湲�
 	public void popAll() {
 		topNode = null;
 	}
@@ -47,4 +59,5 @@ public class LinkedStack<E> implements StackInterface<E> {
 		}
 		System.out.println();
 	}
-} // 코드 6-4
+
+} // 肄붾뱶 6-4

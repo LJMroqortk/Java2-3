@@ -1,7 +1,8 @@
+package test;
 
 public class ListStack<E> implements StackInterface<E> {
 	private ListInterface<E> list;
-
+ 
 	public ListStack() {
 		list = new LinkedList<E>();
 	}
@@ -28,6 +29,6 @@ public class ListStack<E> implements StackInterface<E> {
 
 	////////////////////////////////
 	public void printAll() {
-		//list.printAll();
+		list.printAll();
 	}
 } // 코드 6-7

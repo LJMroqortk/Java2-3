@@ -1,3 +1,4 @@
+package test;
 
 public class Node<E> {
 	public E item;

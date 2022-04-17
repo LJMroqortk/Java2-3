@@ -1,3 +1,4 @@
+package test;
 
 public interface ListInterface<E> {
 	public void add(int i, E x);
@@ -10,4 +11,5 @@ public interface ListInterface<E> {
 	public int len();
 	public boolean isEmpty();
 	public void clear();
+	public void printAll();
 } // 코드 5-4
